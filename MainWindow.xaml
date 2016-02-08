@@ -1,0 +1,102 @@
+﻿<Window x:Class="Arctan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        Title="Arctan计算器 by:自36 刘柏" Height="240" Width="600"
+        Background="#323232">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="187.5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Width="2" Background="#CCCCCC"></GridSplitter>
+        <Label  Content="输入"
+                Grid.Column="0" Margin="30,40,0,0" 
+                Foreground="#FFFFFF" BorderThickness="0"
+                FontSize="14" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox Name="Input_TextBox" Text="1"
+                 Grid.Column="0" Margin="80,40,0,0"  Width="80" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0"
+                 FontSize="14" FontFamily="Cambria Math" TextWrapping="Wrap"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 PreviewTextInput="Input_TextBox_PreviewTextInput"
+                 input:InputMethod.IsInputMethodEnabled="False"/>
+        <Label  Content="精度"
+                Grid.Column="0" Margin="30,80,0,0" 
+                Foreground="#FFFFFF" BorderThickness="0"
+                FontSize="14" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox Name="Accuracy_TextBox" Text="20" 
+                 Grid.Column="0" Margin="80,80,0,0" Width="80" Height="30"
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0"
+                 FontSize="14" FontFamily="Cambria Math" TextWrapping="Wrap"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 PreviewTextInput="Accuracy_TextBox_PreviewTextInput"
+                 input:InputMethod.IsInputMethodEnabled="False"/>
+        <Button Content="重 置"
+                Grid.Column="0" Margin="25,130,0,0"  Width="60" Height="35"
+                Background="#323232" Foreground="#FFFFFF" BorderThickness="0"
+                FontSize="14"
+                HorizontalAlignment="Left"  VerticalAlignment="Top"
+                Click="Button_Click_Reset"/>
+        <Button Content="计 算"
+                Grid.Column="0" Margin="100,130,0,0"  Width="60" Height="35"
+                Background="{x:Null}" Foreground="#FFFFFF" BorderThickness="0"
+                FontSize="14"
+                HorizontalAlignment="Left"  VerticalAlignment="Top"
+                Click="Button_Click_Calc"/>
+        <Label  Content="泰勒法"
+                Grid.Column="1" Margin="20,10,0,0" 
+                Foreground="#FFFFFF" BorderThickness="0"
+                FontSize="12" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox Name="Taylor_TextBox" Text="计算结果" 
+                 Grid.Column="1" Margin="20,35,0,0" Width="250" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True"/>
+        <TextBox Name="TaylorTime_TextBox" Text="耗时" 
+                 Grid.Column="1" Margin="285,35,0,0" Width="100" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True" />
+        <Label  Content="外推加速法"
+                Grid.Column="1" Margin="20,70,0,0" 
+                Foreground="#FFFFFF"
+                FontSize="12" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox Name="Romberg_TextBox" Text="计算结果" 
+                 Grid.Column="1" Margin="20,95,0,0" Width="250" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True" />
+        <TextBox Name="RombergTime_TextBox" Text="耗时" 
+                 Grid.Column="1" Margin="285,95,0,0" Width="100" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True" />
+        <Label  Content="牛顿法"
+                Grid.Column="1" Margin="20,130,0,0" 
+                Foreground="#FFFFFF"
+                FontSize="12" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox Name="Newton_TextBox" Text="计算结果" 
+                 Grid.Column="1" Margin="20,155,0,0" Width="250" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True" />
+        <TextBox Name="NewtonTime_TextBox" Text="耗时" 
+                 Grid.Column="1" Margin="285,155,0,0" Width="100" Height="30" 
+                 Background="#1E1E1E" Foreground="#FFFFFF" BorderThickness="0" 
+                 FontSize="10" FontFamily="Cambria Math" TextWrapping="Wrap" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                 IsReadOnly="True" />
+
+    </Grid>
+</Window>
